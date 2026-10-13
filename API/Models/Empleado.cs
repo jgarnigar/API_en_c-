@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace API.Models;
 
@@ -13,5 +14,6 @@ public partial class Empleado
 
     public string? Apellidos { get; set; }
 
-    public virtual Puesto IdPuestoNavigation { get; set; } = null!;
+    [JsonIgnore]
+    public virtual Puesto? IdPuestoNavigation { get; set; } = null!;
 }
